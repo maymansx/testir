@@ -3,7 +3,7 @@ cbit_IR.onPressEvent(RemoteButton.Minus, function () {
 })
 function IR_SendData (data: number) {
     let i: number;
-    pins.analogWritePin(AnalogPin.P0, 511)
+pins.analogWritePin(AnalogPin.P0, 511)
     pins.analogSetPeriod(AnalogPin.P0, 26)
     control.waitMicros(9000)
     pins.analogWritePin(AnalogPin.P0, 0)
@@ -14,39 +14,39 @@ function IR_SendData (data: number) {
         pins.analogWritePin(AnalogPin.P0, 0)
         control.waitMicros(500)
     }
-    for (i = 0; i < 8; i++) {
+for (i = 0; i < 8; i++) {
         pins.analogWritePin(AnalogPin.P0, 511)
         control.waitMicros(500)
         pins.analogWritePin(AnalogPin.P0, 0)
         control.waitMicros(1685)
     }
-    for (i = 0; i < 3; i++) {
+for (i = 0; i < 3; i++) {
         pins.analogWritePin(AnalogPin.P0, 511)
         control.waitMicros(500)
         pins.analogWritePin(AnalogPin.P0, 0)
         control.waitMicros(1685)
         }
-    for (i = 0; i < 5; i++) {
-        pins.analogWritePin(AnalogPin.P0, 511)
-        control.waitMicros(500)
-        pins.analogWritePin(AnalogPin.P0, 0)
-        control.waitMicros(500)
-        } 
-    for (i = 0; i < 3; i++){
+for (i = 0; i < 5; i++) {
         pins.analogWritePin(AnalogPin.P0, 511)
         control.waitMicros(500)
         pins.analogWritePin(AnalogPin.P0, 0)
         control.waitMicros(500)
         }
-    for (i = 0; i < 5; i++) {
+for (i = 0; i < 3; i++){
+        pins.analogWritePin(AnalogPin.P0, 511)
+        control.waitMicros(500)
+        pins.analogWritePin(AnalogPin.P0, 0)
+        control.waitMicros(500)
+        }
+for (i = 0; i < 5; i++) {
         pins.analogWritePin(AnalogPin.P0, 511)
         control.waitMicros(500)
         pins.analogWritePin(AnalogPin.P0, 0)
         control.waitMicros(1685)
-        }    
+        }
 }
-
 cbit_IR.init(Pins.P8)
+pins.digitalWritePin(DigitalPin.P1, 0)
 basic.forever(function () {
-    IR_SendData(0x07)
+    IR_SendData(7)
 })
