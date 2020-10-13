@@ -1,0 +1,23 @@
+{
+    "name": "testIR",
+    "description": "",
+    "dependencies": {
+        "core": "*",
+        "radio": "*",
+        "cBit": "github:zhuning239/cbit#2ab61d09f2f921deaafc7a16634c1a0914fd7b93",
+        "NTC": "github:zhuning239/ntc#db35bf6d7d3161e9489758a973afe506e302fd9b"
+    },
+    "files": [
+        "main.blocks",
+        "main.ts",
+        "README.md",
+        "main.py"
+    ],
+    "testFiles": [
+        "test.ts"
+    ],
+    "supportedTargets": [
+        "microbit"
+    ],
+    "preferredEditor": "tsprj"
+}
